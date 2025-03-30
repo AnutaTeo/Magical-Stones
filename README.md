@@ -43,3 +43,7 @@ If you are looking for a stone to bring you luck, protection, emotional balance 
   
   - The admin can change the status of an order (Pending, Processing, Shipped, Delivered).
   - They can manage user accounts if needed.
+
+## UI/UX Design:
+This is the design we made for our web application, using Figma. The visuals can be found in the link below:
+https://www.figma.com/design/jrMzwdeTJ90uRpoqQzDpor/Magical-Stones?node-id=0-1&t=YFgJf12UiiXrTM47-1
