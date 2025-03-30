@@ -47,3 +47,7 @@ If you are looking for a stone to bring you luck, protection, emotional balance 
 ## UI/UX Design:
 This is the design we made for our web application, using Figma. The visuals can be found in the link below:
 https://www.figma.com/design/jrMzwdeTJ90uRpoqQzDpor/Magical-Stones?node-id=0-1&t=YFgJf12UiiXrTM47-1
+
+## Trello Board:
+This is the Trello set-up we made for our web application. The board can be found in the link below:
+https://trello.com/invite/b/67e88c7fb0860b78a396ad88/ATTIa286e6464d0c9385765a31a9207e519eDCCCA69E/magical-stones
