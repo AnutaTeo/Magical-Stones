@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn More About Gemstones</title>
+    <link rel="stylesheet" href="/static/css/learn_more.css" th:href="@{/css/learn_more.css}">
+    <link rel="stylesheet" href="/static/css/main.css" th:href="@{/css/main.css}">
+</head>
+<body>
+    <header>
+        <img src="/static/images/LOGO.png" alt="Magical Stones Logo" th:src="@{/images/LOGO.png}">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/learn_more">Learn More</a>
+            <a href="/zodiac-form">Zodiac Form</a>
+            <a href="/shop">Shop</a>
+            <a href="/about">About</a>
+            <a href="/login" class="login-button">Login</a>
+        </nav>
+    </header>
+
+<div>
+    <h1>Learn More about Gemstones</h1>
+    <p class="subheading">Here is our weekly updated article about the new properties of crystals, therapeutical benefits, zodiac horoscope and much more.</p>
+</div>
+
+<section class="gem-image">
+    <img src="/static/images/gemstones.jpg" alt="Colorful Gemstones"  th:src="@{/images/gemstones.jpg}" />
+</section>
+
+<section class="content">
+    <p>
+        Gemstones have attracted humankind since ancient times, and have long been used for jewelry. The prime requisite for a gem is that it must be beautiful. The beauty may lie in color or lack of color; in the latter case, extreme limpidity and “fire” may provide the attraction. A gem must also be durable, if the stone is to retain the polish applied to it and withstand the wear and tear of constant handling.
+    </p>
+
+    <p>
+        In addition to their use as jewelry, gems were regarded by many civilizations as miraculous and endowed with mysterious powers. Different stones were endowed with different and sometimes overlapping attributes; the diamond, for instance, was thought to give its wearer strength in battle and to protect him against ghosts and magic. Vestiges of such beliefs persist in the modern practice of wearing a birthstone.
+    </p>
+
+    <p>
+        For centuries people from across the globe have used different colored gemstones to mark occasions, to send subliminal messages, to show status, to treat illness and even to prevent drunkenness! Sublime beauty and fashion aside, particular colored gemstones, particularly Birthstones, have always conveyed meaning... for the giver and for the wearer.
+    </p>
+
+    <p>
+        Celebrating a new beginning, a birthday, an anniversary with a piece of jewelry set with a meaningful gemstone is as thoughtful and relevant today as it has ever been. Below we outline the various gemstones that are traditionally associated with the months of the year, together with a few of the alternative birthstone gems, should you prefer to have a choice.
+    </p>
+</section>
+
+    <div class="container">
+        <h1 class="title">Zodiac Crystals</h1>
+        <div class="image-section">
+            <img src="/static/images/crystals-circle.jpeg" alt="Crystals Circle" th:src="@{/images/crystals-circle.jpeg}">
+            <img src="/static/images/zodiac-wheel2.jpeg" alt="Zodiac Wheel" th:src="@{/images/zodiac-wheel2.jpeg}">
+        </div>
+
+        <div class="crystals-list">
+            <ul>
+                <li><strong>Aries:</strong> Red Jasper, Bloodstone, Citrine</li>
+                <li><strong>Taurus:</strong> Rose Quartz, Emerald, Lapis Lazuli</li>
+                <li><strong>Gemini:</strong> Clear Quartz, Chrysocolla, Agate</li>
+                <li><strong>Cancer:</strong> Moonstone, Pearl, Selenite</li>
+                <li><strong>Leo:</strong> Carnelian, Citrine, Tiger’s Eye</li>
+                <li><strong>Virgo:</strong> Amazonite, Carnelian, Sardonyx</li>
+            </ul>
+            <ul>
+                <li><strong>Libra:</strong> Opal, Lapis Lazuli, Agate</li>
+                <li><strong>Scorpio:</strong> Obsidian, Citrine, Malachite</li>
+                <li><strong>Sagittarius:</strong> Larbadonite, Sodalite, Topaz</li>
+                <li><strong>Capricorn:</strong> Garnet, Onyx, Ruby</li>
+                <li><strong>Aquarius:</strong> Aquamarine, Celestite, Labradorite</li>
+                <li><strong>Pisces:</strong> Amethyst, Aquamarine, Bloodstone</li>
+            </ul>
+        </div>
+
+        <h2 class="subtitle">Related articles or posts</h2>
+        <div class="related-posts">
+            <div class="post">
+                <img src="/static/images/related1.png" alt="12 Crystals" th:src="@{/images/related1.png}">
+                <p>12 Crystals to carry with you</p>
+            </div>
+            <div class="post">
+                <img src="/static/images/related2.png" alt="Cleanse Crystals" th:src="@{/images/related2.png}">
+                <p>3 simple ways to cleanse your crystals</p>
+            </div>
+            <div class="post">
+                <img src="/static/images/related3.png" alt="Manifesting Crystals" th:src="@{/images/related3.png}">
+                <p>Manifesting with Crystals</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-socials">
+            <p>Follow us on social media:</p>
+            <a href="#"><i>🌐</i> Facebook</a>
+            <a href="#"><i>📷</i> Instagram</a>
+            <a href="#"><i>▶️</i> YouTube</a>
+        </div>
+        <div class="footer-links">
+            <a th:href="@{/zodiac-form}">Zodiac Form</a>
+            <a th:href="@{/about}">About Us</a>
+            <a th:href="@{/certificate}">Authenticity Certificate</a>
+            <a th:href="@{/delivery}">Delivery Policy</a>
+        </div>
+    </footer>
+
+</body>
+</html>
