@@ -15,4 +15,13 @@ public class HomeController {
         return "index";
 
     }
+    @GetMapping("/learn_more")
+    public String learnMore() {
+        return "learn_more";
+    }
+
+    @GetMapping("/shop")
+    public String shop() {
+        return "shop";
+    }
 }

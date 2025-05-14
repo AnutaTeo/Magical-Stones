@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop - Magical Stones</title>
+  <link rel="stylesheet" href="/static/css/shop.css" th:href="@{/css/shop.css}">
+  <link rel="stylesheet" href="/static/css/learn_more.css" th:href="@{/css/learn_more.css}">
+  <link rel="stylesheet" href="/static/css/main.css" th:href="@{/css/main.css}">
+</head>
+<body>
+
+<header>
+  <img src="/static/images/LOGO.png" alt="Magical Stones Logo" th:src="@{/images/LOGO.png}">
+  <nav>
+    <a href="/">Home</a>
+    <a href="/learn_more" >Learn More</a>
+    <a href="/zodiac-form">Zodiac Form</a>
+    <a href="/shop">Shop</a>
+    <a href="/about">About</a>
+    <a href="/login" class="login-button">Login</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="hero">
+    <div class="hero-text">
+      <h1 style="color:white;">Magical Stones</h1>
+      <p>Engage in the world of gemstones</p>
+    </div>
+  </div>
+
+  <div class="filters">
+    <input type="text" id="searchBar" placeholder="🔍 Search for magic...">
+
+    <div class="color-filters">
+      <button class="color-btn red">★ Red</button>
+      <button class="color-btn orange">★ Orange</button>
+      <button class="color-btn yellow">★ Yellow</button>
+      <button class="color-btn green">★ Green</button>
+      <button class="color-btn blue">★ Blue</button>
+      <button class="color-btn purple">★ Purple</button>
+      <button class="color-btn pink">★ Pink</button>
+      <button class="color-btn white">★ White</button>
+      <button class="color-btn black">★ Black</button>
+      <button class="color-btn brown">★ Brown</button>
+    </div>
+  </div>
+
+  <div class="crystal-grid">
+    <div class="crystal-card" th:each="crystal : ${crystals}" th:onclick="'window.location.href=\'/product/'+${crystal.id}+'\''">
+      <img th:src="@{/images/__${crystal.image}__}" alt="Crystal Image">
+      <h3 th:text="${crystal.name}">Crystal Name</h3>
+      <p th:text="${crystal.description}">Crystal description</p>
+      <span th:text="'$' + ${crystal.price}">$4.80</span>
+    </div>
+  </div>
+</div>
+
+<div class="crystal-grid">
+  <div class="crystal-card">
+    <img src="/static/images/opal.jpeg" alt="Opal" th:src="@{/images/opal.jpeg}">
+    <h3>Opal</h3>
+    <p>Opal is an amazing stone for balance, harmony, healing old patterns, and also amplifying your positive powers.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/blue-onyx.jpeg" alt="Blue Onyx" th:src="@{/images/blue-onyx.jpeg}">
+    <h3>Blue Onyx</h3>
+    <p>Blue Onyx has been used to enhance intuition, remove toxic traits and help cancel negative habits.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/malachite.jpeg" alt="Malachite" th:src="@{/images/malachite.jpeg}">
+    <h3>Malachite</h3>
+    <p>Malachite is believed to clear and activate the chakras, fostering an environment of emotional healing and balance.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/jade.jpeg" alt="Jade" th:src="@{/images/jade.jpeg}">
+    <h3>Jade</h3>
+    <p>Jade symbolism covers themes of harmony, eternity, and virtue.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/tigers-eye.jpeg" alt="Tigers Eye" th:src="@{/images/tigers-eye.jpeg}">
+    <h3>Tigers Eye</h3>
+    <p>Tigers eye is a stone of many healing properties that include protection from negative energie and attracting good luck.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/tourmaline.jpeg" alt="Tourmaline" th:src="@{/images/tourmaline.jpeg}">
+    <h3>Tourmaline</h3>
+    <p>Tourmaline has the ability to inspire enlightenment, balance, in both the physical and spiritual realms.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/red-carnelian.jpeg" alt="Red Carnelian" th:src="@{/images/red-carnelian.jpeg}">
+    <h3>Red Carnelian</h3>
+    <p>To boost physical energy, self-esteem and vitality, find yourself a red carnelian. It is associated with enhancing creativity, courage and passion.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/selenite.jpeg" alt="Selenite" th:src="@{/images/selenite.jpeg}">
+    <h3>Selenite</h3>
+    <p>Selenite is most widely used for cleansing and charging other crystals. Some of its other applications are
+      calming your mind.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/obsidian.jpeg" alt="Obsidian" th:src="@{/images/obsidian.jpeg}">
+    <h3>Obsidian</h3>
+    <p>Incorporating obsidian into your personal space can provide a sense of protection, grounding, and tranquility,
+      reducing electromagnetic radiation.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/citrine.jpeg" alt="Citrine" th:src="@{/images/citrine.jpeg}">
+    <h3>Citrine</h3>
+    <p>Citrine is a gemstone of radiant energy and healing properties, bringing abundance, optimism and happiness.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/red-agate.jpeg" alt="Red Agate" th:src="@{/images/red-agate.jpeg}">
+    <h3>Red Agate</h3>
+    <p>Gems are often surrounded by tales of magic, but this one has consistently stood as a symbol of grounding.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/apatite.jpeg" alt="Apatite" th:src="@{/images/apatite.jpeg}">
+    <h3>Apatite</h3>
+    <p>Apatite is believed to decrease appetite (hunger) as well as enhance insight, creativity and learning.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/apatite.jpeg" alt="Apatite" th:src="@{/images/apatite.jpeg}">
+    <h3>Apatite</h3>
+    <p>Apatite is believed to decrease appetite (hunger) as well as enhance insight, creativity and learning.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/apatite.jpeg" alt="Apatite" th:src="@{/images/apatite.jpeg}">
+    <h3>Apatite</h3>
+    <p>Apatite is believed to decrease appetite (hunger) as well as enhance insight, creativity and learning.</p>
+    <span>$4.80</span>
+  </div>
+  <div class="crystal-card">
+    <img src="/static/images/apatite.jpeg" alt="Apatite" th:src="@{/images/apatite.jpeg}">
+    <h3>Apatite</h3>
+    <p>Apatite is believed to decrease appetite (hunger) as well as enhance insight, creativity and learning.</p>
+    <span>$4.80</span>
+  </div>
+
+</div>
+
+<h2 class="section-title">March is Aries Season!</h2>
+<div class="crystal-grid">
+  <div class="crystal-card">
+    <img src="/static/images/aries-zodiac.jpeg" alt="Aries Zodiac" th:src="@{/images/aries-zodiac.jpeg}">
+    <h3>Aries Zodiac</h3>
+    <p>Crystals for Aries include Quartz Crystal (power stone), Carnelian, Citrine, Black Onyx and Rose Quartz.</p>
+    <span>Included in Kit</span>
+  </div>
+
+  <div class="crystal-card">
+    <img src="/static/images/aries-kit.jpeg" alt="Aries Crystal Kit" th:src="@{/images/aries-kit.jpeg}">
+    <h3>Aries Crystal Kit</h3>
+    <p>Enhance your inner fire and balance your energy with this curated crystal kit for Aries season.</p>
+    <span>$19.99</span>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-socials">
+    <p>Follow us on social media:</p>
+    <a href="#"><i>🌐</i> Facebook</a>
+    <a href="#"><i>📷</i> Instagram</a>
+    <a href="#"><i>▶️</i> YouTube</a>
+  </div>
+  <div class="footer-links">
+    <a th:href="@{/zodiac-form}">Zodiac Form</a>
+    <a th:href="@{/about}">About Us</a>
+    <a th:href="@{/certificate}">Authenticity Certificate</a>
+    <a th:href="@{/delivery}">Delivery Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>
