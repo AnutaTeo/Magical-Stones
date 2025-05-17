@@ -14,7 +14,7 @@
   <nav>
     <a href="/">Home</a>
     <a href="/learn_more" >Learn More</a>
-    <a href="/zodiac-form">Zodiac Form</a>
+    <a href="/zodiac_form">Zodiac Form</a>
     <a href="/shop">Shop</a>
     <a href="/about">About</a>
     <a href="/login" class="login-button">Login</a>
@@ -47,52 +47,53 @@
   </div>
 
   <div class="crystal-grid">
-    <div class="crystal-card" th:each="crystal : ${crystals}" th:onclick="'window.location.href=\'/product/'+${crystal.id}+'\''">
-      <img th:src="@{/images/__${crystal.image}__}" alt="Crystal Image">
-      <h3 th:text="${crystal.name}">Crystal Name</h3>
-      <p th:text="${crystal.description}">Crystal description</p>
-      <span th:text="'$' + ${crystal.price}">$4.80</span>
-    </div>
+  <div class="crystal-card" th:each="crystal : ${crystals}">
+    <a th:href="@{'/product/' + ${crystal.id}}" style="text-decoration: none; color: inherit;">
+      <img th:src="@{'/images/' + ${crystal.image}}" alt="Crystal">
+      <h3 th:text="${crystal.name}">Crystal</h3>
+      <p th:text="${crystal.description}"></p>
+      <span th:text="'$' + ${crystal.price}"></span>
+    </a>
   </div>
-</div>
+  </div>
 
 <div class="crystal-grid">
-  <div class="crystal-card">
-    <img src="/static/images/opal.jpeg" alt="Opal" th:src="@{/images/opal.jpeg}">
-    <h3>Opal</h3>
-    <p>Opal is an amazing stone for balance, harmony, healing old patterns, and also amplifying your positive powers.</p>
-    <span>$4.80</span>
-  </div>
-  <div class="crystal-card">
-    <img src="/static/images/blue-onyx.jpeg" alt="Blue Onyx" th:src="@{/images/blue-onyx.jpeg}">
-    <h3>Blue Onyx</h3>
-    <p>Blue Onyx has been used to enhance intuition, remove toxic traits and help cancel negative habits.</p>
-    <span>$4.80</span>
-  </div>
-  <div class="crystal-card">
-    <img src="/static/images/malachite.jpeg" alt="Malachite" th:src="@{/images/malachite.jpeg}">
-    <h3>Malachite</h3>
-    <p>Malachite is believed to clear and activate the chakras, fostering an environment of emotional healing and balance.</p>
-    <span>$4.80</span>
-  </div>
-  <div class="crystal-card">
-    <img src="/static/images/jade.jpeg" alt="Jade" th:src="@{/images/jade.jpeg}">
-    <h3>Jade</h3>
-    <p>Jade symbolism covers themes of harmony, eternity, and virtue.</p>
-    <span>$4.80</span>
-  </div>
-  <div class="crystal-card">
-    <img src="/static/images/tigers-eye.jpeg" alt="Tigers Eye" th:src="@{/images/tigers-eye.jpeg}">
-    <h3>Tigers Eye</h3>
-    <p>Tigers eye is a stone of many healing properties that include protection from negative energie and attracting good luck.</p>
-    <span>$4.80</span>
-  </div>
-  <div class="crystal-card">
-    <img src="/static/images/tourmaline.jpeg" alt="Tourmaline" th:src="@{/images/tourmaline.jpeg}">
-    <h3>Tourmaline</h3>
-    <p>Tourmaline has the ability to inspire enlightenment, balance, in both the physical and spiritual realms.</p>
-    <span>$4.80</span>
-  </div>
+<!--  <div class="crystal-card">-->
+<!--    <img src="/static/images/opal.jpeg" alt="Opal" th:src="@{/images/opal.jpeg}">-->
+<!--    <h3>Opal</h3>-->
+<!--    <p>Opal is an amazing stone for balance, harmony, healing old patterns, and also amplifying your positive powers.</p>-->
+<!--    <span>$4.80</span>-->
+<!--  </div>-->
+<!--  <div class="crystal-card">-->
+<!--    <img src="/static/images/blue-onyx.jpeg" alt="Blue Onyx" th:src="@{/images/blue-onyx.jpeg}">-->
+<!--    <h3>Blue Onyx</h3>-->
+<!--    <p>Blue Onyx has been used to enhance intuition, remove toxic traits and help cancel negative habits.</p>-->
+<!--    <span>$4.80</span>-->
+<!--  </div>-->
+<!--  <div class="crystal-card">-->
+<!--    <img src="/static/images/malachite.jpeg" alt="Malachite" th:src="@{/images/malachite.jpeg}">-->
+<!--    <h3>Malachite</h3>-->
+<!--    <p>Malachite is believed to clear and activate the chakras, fostering an environment of emotional healing and balance.</p>-->
+<!--    <span>$4.80</span>-->
+<!--  </div>-->
+<!--  <div class="crystal-card">-->
+<!--    <img src="/static/images/jade.jpeg" alt="Jade" th:src="@{/images/jade.jpeg}">-->
+<!--    <h3>Jade</h3>-->
+<!--    <p>Jade symbolism covers themes of harmony, eternity, and virtue.</p>-->
+<!--    <span>$4.80</span>-->
+<!--  </div>-->
+<!--  <div class="crystal-card">-->
+<!--    <img src="/static/images/tigers-eye.jpeg" alt="Tigers Eye" th:src="@{/images/tigers-eye.jpeg}">-->
+<!--    <h3>Tigers Eye</h3>-->
+<!--    <p>Tigers eye is a stone of many healing properties that include protection from negative energie and attracting good luck.</p>-->
+<!--    <span>$4.80</span>-->
+<!--  </div>-->
+<!--  <div class="crystal-card">-->
+<!--    <img src="/static/images/tourmaline.jpeg" alt="Tourmaline" th:src="@{/images/tourmaline.jpeg}">-->
+<!--    <h3>Tourmaline</h3>-->
+<!--    <p>Tourmaline has the ability to inspire enlightenment, balance, in both the physical and spiritual realms.</p>-->
+<!--    <span>$4.80</span>-->
+<!--  </div>-->
   <div class="crystal-card">
     <img src="/static/images/red-carnelian.jpeg" alt="Red Carnelian" th:src="@{/images/red-carnelian.jpeg}">
     <h3>Red Carnelian</h3>
@@ -131,24 +132,7 @@
     <p>Apatite is believed to decrease appetite (hunger) as well as enhance insight, creativity and learning.</p>
     <span>$4.80</span>
   </div>
-  <div class="crystal-card">
-    <img src="/static/images/apatite.jpeg" alt="Apatite" th:src="@{/images/apatite.jpeg}">
-    <h3>Apatite</h3>
-    <p>Apatite is believed to decrease appetite (hunger) as well as enhance insight, creativity and learning.</p>
-    <span>$4.80</span>
-  </div>
-  <div class="crystal-card">
-    <img src="/static/images/apatite.jpeg" alt="Apatite" th:src="@{/images/apatite.jpeg}">
-    <h3>Apatite</h3>
-    <p>Apatite is believed to decrease appetite (hunger) as well as enhance insight, creativity and learning.</p>
-    <span>$4.80</span>
-  </div>
-  <div class="crystal-card">
-    <img src="/static/images/apatite.jpeg" alt="Apatite" th:src="@{/images/apatite.jpeg}">
-    <h3>Apatite</h3>
-    <p>Apatite is believed to decrease appetite (hunger) as well as enhance insight, creativity and learning.</p>
-    <span>$4.80</span>
-  </div>
+
 
 </div>
 
@@ -168,6 +152,7 @@
     <span>$19.99</span>
   </div>
 </div>
+</div>
 
 <footer>
   <div class="footer-socials">
@@ -177,7 +162,7 @@
     <a href="#"><i>▶️</i> YouTube</a>
   </div>
   <div class="footer-links">
-    <a th:href="@{/zodiac-form}">Zodiac Form</a>
+    <a th:href="@{/zodiac_form}">Zodiac Form</a>
     <a th:href="@{/about}">About Us</a>
     <a th:href="@{/certificate}">Authenticity Certificate</a>
     <a th:href="@{/delivery}">Delivery Policy</a>
