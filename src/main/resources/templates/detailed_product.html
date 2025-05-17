@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${crystal.name} + ' - Magical Stones'">Product</title>
+  <link rel="stylesheet" th:href="@{/css/detailed_product.css}">
+  <link rel="stylesheet" href="/static/css/main.css" th:href="@{/css/main.css}">
+</head>
+<body>
+
+<header>
+  <img src="/static/images/LOGO.png" alt="Magical Stones Logo" th:src="@{/images/LOGO.png}">
+  <nav>
+    <a href="/">Home</a>
+    <a href="/learn_more" >Learn More</a>
+    <a href="/zodiac_form">Zodiac Form</a>
+    <a href="/shop">Shop</a>
+    <a href="/about">About</a>
+    <a href="/login" class="login-button">Login</a>
+  </nav>
+</header>
+
+<br> <br> <br> <br>
+<div class="product-container">
+  <div class="main-section">
+    <div class="image-box">
+      <img th:if="${crystal.image != null}" th:src="@{'/images/' + ${crystal.image}}" alt="Main Crystal Image">
+    </div>
+    <div class="info-box">
+      <h1 th:text="${crystal.name}">Crystal Name</h1>
+      <p class="subtitle" th:text="${crystal.subtitle}">Crystal subtitle</p>
+      <p class="price" th:text="'$' + ${crystal.price}">$0.00</p>
+      <p th:text="${crystal.description}">Crystal description</p>
+
+      <form th:action="@{/cart/add}" method="post">
+        <input type="hidden" name="id" th:value="${crystal.id}" />
+        <button type="submit">Add to cart</button>
+      </form>
+    </div>
+  </div>
+
+  <h2>More details</h2>
+  <div class="more-details">
+    <div class="detail-image">
+      <img th:if="${crystal.moreImage != null}" th:src="@{'/images/' + ${crystal.moreImage}}" alt="Crystal Detail Image" src="">
+      <p th:text="${crystal.detailTitle}">Crystal Detail Title</p>
+      <span th:text="'$' + ${crystal.detailPrice}">$0.00</span>
+    </div>
+    <div class="detail-info">
+      <p><strong>🖊️ Color</strong><br><span th:text="${crystal.color}">Color info</span></p>
+      <p><strong>🔆 Dimensions</strong><br><span th:text="${crystal.dimensions}">Dimensions info</span></p>
+      <p><strong>🤍 Benefits</strong><br><span th:text="${crystal.benefits}">Benefits info</span></p>
+      <p><strong>🌙 Zodiac Sign</strong><br><span th:text="${crystal.zodiacInfo}">Zodiac info</span></p>
+    </div>
+  </div>
+</div>
+<br> <br><br> <br>
+<footer>
+  <div class="footer-socials">
+    <p>Follow us on social media:</p>
+    <a href="#"><i>🌐</i> Facebook</a>
+    <a href="#"><i>📷</i> Instagram</a>
+    <a href="#"><i>▶️</i> YouTube</a>
+  </div>
+  <div class="footer-links">
+    <a th:href="@{/zodiac_form}">Zodiac Form</a>
+    <a th:href="@{/about}">About Us</a>
+    <a th:href="@{/certificate}">Authenticity Certificate</a>
+    <a th:href="@{/delivery}">Delivery Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>

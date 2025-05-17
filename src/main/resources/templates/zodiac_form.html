@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Zodiac Form</title>
+    <link rel="stylesheet" href="/static/css/zodiac_form.css"  th:href="@{/css/zodiac_form.css}">
+    <link rel="stylesheet" href="/static/css/main.css" th:href="@{/css/main.css}">
+</head>
+<body>
+
+<header>
+    <img src="/static/images/LOGO.png" alt="Magical Stones Logo" th:src="@{/images/LOGO.png}">
+    <nav>
+        <a href="/">Home</a>
+        <a href="/learn_more" >Learn More</a>
+        <a href="/zodiac_form">Zodiac Form</a>
+        <a href="/shop">Shop</a>
+        <a href="/about">About</a>
+        <a href="/login" class="login-button">Login</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1><span class="highlight">Zodiac Form</span></h1>
+    <p class="intro">Magical Stones knows what crystal holds your energy!</p>
+    <p class="description">Your zodiac sign holds unique energy that influences your personality, emotions, and life path.
+        Fill out the form below to discover the gemstone that aligns best with you!</p>
+
+    <form th:action="@{/zodiac_form}" method="post" class="zodiac_form">
+        <div class="form-left">
+            <label>
+                <input type="text" name="name" placeholder="Name" required>
+            </label>
+            <label>
+                <input type="email" name="email" placeholder="Email address" required>
+            </label>
+
+            <label>What is your zodiac sign?</label>
+            <label>
+                <select name="zodiacSign" required>
+                    <option value="">Choose from the list...</option>
+                    <option>Aries</option><option>Taurus</option><option>Gemini</option>
+                    <option>Cancer</option><option>Leo</option><option>Virgo</option>
+                    <option>Libra</option><option>Scorpio</option><option>Sagittarius</option>
+                    <option>Capricorn</option><option>Aquarius</option><option>Pisces</option>
+                </select>
+            </label>
+
+            <label>When is your birthday?</label>
+            <label>
+                <input type="date" name="birthday" required>
+            </label>
+
+            <label>Which word best describes your current energy?</label>
+            <label>
+                <select name="energyWord">
+                    <option>Grounded</option><option>Inspired</option><option>Stressed</option>
+                    <option>Motivated</option><option>Unfocused</option>
+                </select>
+            </label>
+
+            <label>What type of energy do you feel most drawn to?</label>
+            <label>
+                <select name="desiredEnergy">
+                    <option>Protection</option><option>Love</option><option>Clarity</option>
+                    <option>Creativity</option><option>Balance</option>
+                </select>
+            </label>
+
+            <label>Do you like a specific crystal color?</label>
+            <label>
+                <select name="color">
+                    <option>Red</option><option>Blue</option><option>Green</option>
+                    <option>Purple</option><option>Clear</option>
+                </select>
+            </label>
+
+            <label>Would you like a crystal that complements your zodiac element?</label>
+            <label>
+                <select name="elementBased">
+                    <option>Yes</option><option>No</option>
+                </select>
+            </label>
+
+            <label>How much do you like to spend?</label>
+            <label>
+                <input type="range" name="price" min="0" max="100">
+            </label>
+
+            <label>Do you prefer wearing your crystal or keeping it for decor?</label>
+            <div class="checkbox-row">
+                <label><input type="checkbox" name="usage" value="wear"> Yes</label>
+                <label><input type="checkbox" name="usage" value="decor"> No</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </div>
+
+        <div class="form-right">
+            <img src="/static/images/zodiac_wheel3.jpg" alt="Zodiac Wheel" th:src="@{/images/zodiac_wheel3.jpg}">
+        </div>
+    </form>
+</div>
+
+<footer>
+    <div class="footer-socials">
+        <p>Follow us on social media:</p>
+        <a href="#"><i>🌐</i> Facebook</a>
+        <a href="#"><i>📷</i> Instagram</a>
+        <a href="#"><i>▶️</i> YouTube</a>
+    </div>
+    <div class="footer-links">
+        <a th:href="@{/zodiac_form}">Zodiac Form</a>
+        <a th:href="@{/about}">About Us</a>
+        <a th:href="@{/certificate}">Authenticity Certificate</a>
+        <a th:href="@{/delivery}">Delivery Policy</a>
+    </div>
+</footer>
+
+</body>
+</html>

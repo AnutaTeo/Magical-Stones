@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Magical Stones</title>
+    <link rel="stylesheet" href="/static/css/about.css" th:href="@{/css/about.css}">
+    <link rel="stylesheet" href="/static/css/main.css" th:href="@{/css/main.css}">
+</head>
+<body>
+<header>
+    <img src="/static/images/LOGO.png" alt="Magical Stones Logo" th:src="@{/images/LOGO.png}">
+    <nav>
+        <a href="/">Home</a>
+        <a href="/learn_more" >Learn More</a>
+        <a href="/zodiac_form">Zodiac Form</a>
+        <a href="/shop">Shop</a>
+        <a href="/about">About</a>
+        <a href="/login" class="login-button">Login</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="about-section">
+        <div class="about-text">
+            <h1>About</h1>
+            <p class="tagline">Magical Stones is a store for crystals lovers!</p>
+            <p>Magical Stones was born from a deep love for the energy, beauty, and spiritual power of crystals. What started as a personal journey to find meaning and healing through gemstones quickly turned into a passion for helping others discover the same magic.</p>
+            <p>We know that finding the right crystal isn’t just about choosing a pretty stone, it’s about finding the one that resonates with your soul, supports your journey, and aligns with your energy.</p>
+            <p>We’ve spent years learning about crystals, their properties, and their connection to zodiac signs, chakras, and intentions. Our goal is to make crystal shopping personal, meaningful, and transparent, so every crystal in our shop is handpicked for quality, authenticity, and positive energy.</p>
+        </div>
+        <div class="about-img">
+            <img src="/static/images/jewelry_work.webp" alt="Crafting Jewelry" th:src="@{/images/jewelry_work.webp}">
+        </div>
+    </div>
+
+    <div class="contact-location-section">
+        <div class="contact-form">
+            <h2>Contact us for any complaint:</h2>
+            <form>
+                <div class="row">
+                    <label>
+                        <input type="text" placeholder="First name" required>
+                    </label>
+                    <label>
+                        <input type="text" placeholder="Last name" required>
+                    </label>
+                </div>
+                <label>
+                    <input type="email" placeholder="Email address" required>
+                </label>
+                <label>
+                    <textarea placeholder="Enter your question or message" rows="5" required></textarea>
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="map">
+            <h2>Where you can find our shop</h2>
+            <img src="/static/images/map.png" alt="Shop Location Map" th:src="@{/images/map.png}">
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-socials">
+        <p>Follow us on social media:</p>
+        <a href="#"><i>🌐</i> Facebook</a>
+        <a href="#"><i>📷</i> Instagram</a>
+        <a href="#"><i>▶️</i> YouTube</a>
+    </div>
+    <div class="footer-links">
+        <a th:href="@{/zodiac_form}">Zodiac Form</a>
+        <a th:href="@{/about}">About Us</a>
+        <a th:href="@{/certificate}">Authenticity Certificate</a>
+        <a th:href="@{/delivery}">Delivery Policy</a>
+    </div>
+</footer>
+</body>
+</html>

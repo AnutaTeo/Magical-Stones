@@ -11,7 +11,6 @@ public class HomeController {
 
     @GetMapping
     public String home(){
-        //returns the view
         return "index";
 
     }
@@ -20,8 +19,13 @@ public class HomeController {
         return "learn_more";
     }
 
-    @GetMapping("/shop")
-    public String shop() {
-        return "shop";
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
+
+    @GetMapping("/zodiac_form")
+    public String zodiac_form() {
+        return "zodiac_form";
     }
 }
