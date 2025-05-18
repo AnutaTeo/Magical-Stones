@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,18 @@
         <a href="/zodiac_form">Zodiac Form</a>
         <a href="/shop">Shop</a>
         <a href="/about">About</a>
-        <a href="/login" class="login-button">Login</a>
+        <span sec:authorize="isAuthenticated()" style="color: white;">
+            Logged in as <b sec:authentication="name"></b>
+        </span>
+
+        <a href="/admin" sec:authorize="hasRole('ADMIN')">Admin Panel</a>
+
+        <a href="/login" sec:authorize="!isAuthenticated()">Login</a>
+
+        <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+            <button type="submit">Logout</button>
+        </form>
+
     </nav>
 </header>
 
