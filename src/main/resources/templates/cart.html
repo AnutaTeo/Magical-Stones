@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <link rel="stylesheet" th:href="@{/css/cart.css}">
+</head>
+<body>
+<div class="cart-container">
+  <h1>Your Shopping Cart</h1>
+  <div th:if="${#lists.isEmpty(cart)}">
+    <p>Your cart is empty.</p>
+    <a href="/shop" class="btn">Continue Shopping</a>
+  </div>
+  <div th:if="${!#lists.isEmpty(cart)}">
+    <table>
+      <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Subtotal</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="item : ${cart}">
+        <td th:text="${item.product.name}">Crystal Name</td>
+        <td th:text="${item.product.price}">4.80</td>
+        <td>
+          <form th:action="@{/cart/update}" method="post">
+            <input type="hidden" name="id" th:value="${item.product.id}" />
+            <label>
+              <input type="number" name="quantity" th:value="${item.quantity}" min="0" />
+            </label>
+            <button type="submit">Update</button>
+          </form>
+        </td>
+        <td th:text="${item.subtotal}">9.60</td>
+        <td>
+          <form th:action="@{/cart/update}" method="post">
+            <input type="hidden" name="id" th:value="${item.product.id}" />
+            <input type="hidden" name="quantity" value="0" />
+            <button type="submit" class="remove">Remove</button>
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="cart-summary">
+      <p><strong>Total:</strong> $<span th:text="${total}">0.00</span></p>
+      <a href="/shop" class="btn">Continue Shopping</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
