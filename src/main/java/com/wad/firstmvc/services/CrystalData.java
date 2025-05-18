@@ -10,6 +10,7 @@ import java.util.Optional;
 @Component
 public class CrystalData {
     private final List<Crystal> crystals = new ArrayList<>();
+    private Long nextId = 1L;
 
     public CrystalData() {
         Crystal c1 = new Crystal();
@@ -115,5 +116,24 @@ public class CrystalData {
 
     public Optional<Crystal> findById(Long id) {
         return crystals.stream().filter(c -> c.getId().equals(id)).findFirst();
+    }
+
+    public void save(Crystal crystal) {
+        crystal.setId(nextId++);
+        crystals.add(crystal);
+    }
+
+    public void deleteById(Long id) {
+        crystals.removeIf(c -> c.getId().equals(id));
+    }
+
+    public void update(Long id, Crystal updated) {
+        for (int i = 0; i < crystals.size(); i++) {
+            if (crystals.get(i).getId().equals(id)) {
+                updated.setId(id); // preserve ID
+                crystals.set(i, updated);
+                return;
+            }
+        }
     }
 }

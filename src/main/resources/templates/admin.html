@@ -3,10 +3,50 @@
 <head>
     <title>Admin Panel</title>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
 </head>
 <body>
-<h1>Welcome, Admin!</h1>
-<p>Here you will be able to add, update or delete products.</p>
-<a href="/shop">Go back to shop</a>
+<h1>Admin Panel</h1>
+
+<!-- Add Product Form -->
+<h2>Add New Crystal</h2>
+<form th:action="@{/admin/add}" method="post">
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="text" name="description" placeholder="Description" required />
+    <input type="number" name="price" step="0.01" placeholder="Price" required />
+    <input type="text" name="image" placeholder="Image filename (e.g. opal.jpg)" />
+    <button type="submit">Add</button>
+</form>
+
+<!-- List of Products -->
+<h2>All Products</h2>
+<table>
+    <thead>
+    <tr><th>Name</th><th>Description</th><th>Price</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+    <tr th:each="crystal : ${crystals}">
+        <td th:text="${crystal.name}">Crystal</td>
+        <td th:text="${crystal.description}">Desc</td>
+        <td th:text="${crystal.price}">0.0</td>
+        <td>
+            <!-- Delete -->
+            <a th:href="@{'/admin/delete/' + ${crystal.id}}">Delete</a>
+
+            <!-- Edit Form -->
+            <form th:action="@{'/admin/edit/' + ${crystal.id}}" method="post" style="display:inline;">
+                <input type="text" name="name" th:value="${crystal.name}" required />
+                <input type="text" name="description" th:value="${crystal.description}" required />
+                <input type="number" name="price" step="0.01" th:value="${crystal.price}" required />
+                <button type="submit">Update</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/shop" class="back-button">⬅ Back to Shop</a>
+
 </body>
 </html>
+
