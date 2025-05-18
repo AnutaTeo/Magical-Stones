@@ -74,6 +74,11 @@
       <p><strong>Total:</strong> $<span th:text="${total}">0.00</span></p>
       <a href="/shop" class="btn">Continue Shopping</a>
     </div>
+
+    <form th:action="@{/cart/checkout}" method="post">
+      <button type="submit">Checkout</button>
+    </form>
+
   </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br>

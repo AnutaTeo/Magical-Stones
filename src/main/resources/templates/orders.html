@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<body>
+<head>
+  <meta charset="UTF-8">
+  <title>Orders</title>
+  <link rel="stylesheet" href="/static/css/main.css" th:href="@{/css/main.css}">
+  <link rel="stylesheet" href="/static/css/orders.css" th:href="@{/css/orders.css}" />
+  <h2>Your Orders</h2>
+  <table>
+    <tr>
+      <th>Product</th><th>Price</th><th>Status</th>
+    </tr>
+    <tr th:each="o : ${orders}">
+      <td th:text="${o.productName}">Name</td>
+      <td th:text="${o.price}">0.00</td>
+      <td th:text="${o.status}">Pending</td>
+    </tr>
+  </table>
+</head>
+</body>
+</html>

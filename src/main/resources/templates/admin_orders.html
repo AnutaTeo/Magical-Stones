@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Orders</title>
+  <link rel="stylesheet" href="/static/css/main.css" th:href="@{/css/main.css}">
+  <link rel="stylesheet" href="/static/css/orders.css" th:href="@{/css/orders.css}" >
+</head>
+<body>
+
+<h1>All Client Orders</h1>
+
+<table border="1" cellpadding="8">
+  <tr>
+    <th>User</th>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Status</th>
+    <th>Update</th>
+  </tr>
+  <tr th:each="order : ${orders}">
+    <td th:text="${order.username}">username</td>
+    <td th:text="${order.productName}">product</td>
+    <td th:text="${order.price}">0.00</td>
+    <td th:text="${order.status}">Pending</td>
+    <td>
+      <form th:action="@{/admin/orders/update}" method="post">
+        <input type="hidden" name="id" th:value="${order.id}" />
+        <select name="status">
+          <option th:selected="${order.status == 'Pending'}">Pending</option>
+          <option th:selected="${order.status == 'Processing'}">Processing</option>
+          <option th:selected="${order.status == 'Shipped'}">Shipped</option>
+          <option th:selected="${order.status == 'Delivered'}">Delivered</option>
+        </select>
+        <button type="submit">Update</button>
+      </form>
+    </td>
+  </tr>
+</table>
+
+<br>
+<a href="/admin">⬅ Back to Admin Panel</a>
+
+</body>
+</html>
