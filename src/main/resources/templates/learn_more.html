@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Learn More About Gemstones</title>
@@ -7,17 +7,28 @@
     <link rel="stylesheet" href="/static/css/main.css" th:href="@{/css/main.css}">
 </head>
 <body>
-    <header>
-        <img src="/static/images/LOGO.png" alt="Magical Stones Logo" th:src="@{/images/LOGO.png}">
-        <nav>
-            <a href="/">Home</a>
-            <a href="/learn_more">Learn More</a>
-            <a href="/zodiac_form">Zodiac Form</a>
-            <a href="/shop">Shop</a>
-            <a href="/about">About</a>
-            <a href="/login" class="login-button">Login</a>
-        </nav>
-    </header>
+<header>
+    <img src="/static/images/LOGO.png" alt="Magical Stones Logo" th:src="@{/images/LOGO.png}">
+    <nav>
+        <a href="/">Home</a>
+        <a href="/learn_more" >Learn More</a>
+        <a href="/zodiac_form">Zodiac Form</a>
+        <a href="/shop">Shop</a>
+        <a href="/about">About</a>
+        <span sec:authorize="isAuthenticated()" style="color: white;">
+            Logged in as <b sec:authentication="name"></b>
+        </span>
+
+        <a href="/admin" sec:authorize="hasRole('ADMIN')">Admin Panel</a>
+
+        <a href="/login" sec:authorize="!isAuthenticated()">Login</a>
+
+        <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+            <button type="submit">Logout</button>
+        </form>
+
+    </nav>
+</header>
 
 <div>
     <h1>Learn More about Gemstones</h1>
