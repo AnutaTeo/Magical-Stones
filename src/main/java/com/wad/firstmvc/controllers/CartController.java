@@ -2,7 +2,12 @@ package com.wad.firstmvc.controllers;
 
 import com.wad.firstmvc.domain.CartItem;
 import com.wad.firstmvc.domain.Crystal;
+import com.wad.firstmvc.domain.Order;
 import com.wad.firstmvc.services.CrystalData;
+import com.wad.firstmvc.services.OrderData;
+import jakarta.servlet.http.HttpSession;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,15 +20,18 @@ import java.util.List;
 public class CartController {
 
     private final CrystalData data;
+    private final OrderData orderData;
 
-    public CartController(CrystalData data) {
+    public CartController(CrystalData data, OrderData orderData) {
         this.data = data;
+        this.orderData = orderData;
     }
 
     @ModelAttribute("cart")
     public List<CartItem> cart() {
         return new ArrayList<>();
     }
+
 
     @PostMapping("/cart/add")
     public String addToCart(@RequestParam Long id, @ModelAttribute("cart") List<CartItem> cart) {
@@ -59,5 +67,28 @@ public class CartController {
         double total = cart.stream().mapToDouble(CartItem::getSubtotal).sum();
         model.addAttribute("total", total);
         return "cart";
+    }
+
+    @PostMapping("/cart/checkout")
+    public String checkout(@AuthenticationPrincipal UserDetails userDetails,
+                           @ModelAttribute("cart") List<CartItem> cart) {
+        if (cart == null || cart.isEmpty()) {
+            return "redirect:/cart";
+        }
+
+        String username = userDetails.getUsername();
+
+        for (CartItem item : cart) {
+            orderData.save(new Order(
+                    null,
+                    username,
+                    item.getProduct().getName(),
+                    item.getProduct().getPrice() * item.getQuantity(),
+                    "Pending"
+            ));
+        }
+
+        cart.clear();
+        return "redirect:/orders";
     }
 }
