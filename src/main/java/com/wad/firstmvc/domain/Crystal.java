@@ -15,6 +15,7 @@ public class Crystal {
     private String benefits;
     private String zodiacInfo;
 
+
     public Long getId() {
         return id;
     }
