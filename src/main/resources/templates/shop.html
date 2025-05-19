@@ -44,10 +44,16 @@
     <input type="text" id="searchBar" placeholder="🔍 Search for magic...">
 
     <div class="color-filters">
-      <button class="color-btn red">★ Red</button>
+      <form th:action="@{/shop}" method="get">
+        <input type="hidden" name="color" value="Red" />
+        <button type="submit" class="color-btn red">★ Red</button>
+      </form>
       <button class="color-btn orange">★ Orange</button>
       <button class="color-btn yellow">★ Yellow</button>
-      <button class="color-btn green">★ Green</button>
+      <form th:action="@{/shop}" method="get">
+        <input type="hidden" name="color" value="Green" />
+        <button type="submit" class="color-btn green">★ Green</button>
+      </form>
       <button class="color-btn blue">★ Blue</button>
       <button class="color-btn purple">★ Purple</button>
       <button class="color-btn pink">★ Pink</button>
