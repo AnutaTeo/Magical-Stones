@@ -2,9 +2,11 @@
 
 **Magical Stones** is a web application designed to help users discover and buy crystals and stones based on their birthday, zodiac sign or personal preferences. They can browse a variety of stones and read/learn about their therapeutic properties.
 
-## Team Members:    
- - Surugiu Ioana-Monica
- - Teodorescu Ana-Maria
+## Team Members: 
+- Teodorescu Ana-Maria
+- Surugiu Ioana-Monica
+- Baccela Radu-Costin
+- Stefan Madalina-Eliana
 
 ## App Description:
 If you are looking for a stone to bring you luck, protection, emotional balance or you just simply want a cool accessory, our platform helps you choose the perfect crystal to buy. 
