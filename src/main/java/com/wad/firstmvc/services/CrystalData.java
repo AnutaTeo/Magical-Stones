@@ -23,7 +23,7 @@ public class CrystalData {
         c1.setDetailTitle("Opal Necklace");
         c1.setPrice(4.80);
         c1.setDetailPrice(15.99);
-        c1.setColor("White, Iridescent");
+        c1.setColor("White");
         c1.setDimensions("Pendant: 2cm, Chain: 45cm");
         c1.setBenefits("Enhances creativity, boosts optimism, and supports emotional healing.");
         c1.setZodiacInfo("Libra, Cancer");
@@ -108,6 +108,103 @@ public class CrystalData {
         c6.setBenefits("Protection against destructive energies and bad vibrations.");
         c6.setZodiacInfo("Gemini, Virgo");
         crystals.add(c6);
+
+        Crystal c7 = new Crystal();
+        c7.setId(7L);
+        c7.setName("Red Carnelian");
+        c7.setSubtitle("A stone of passion and grounding spiritual energy");
+        c7.setDescription("A talisman for ambition, performance (Singer's Stone), and success.");
+        c7.setImage("red-carnelian.jpeg");
+        c7.setMoreImage("red-carnelian-necklace.jpeg");
+        c7.setDetailTitle("Red Carnelian Necklace");
+        c7.setPrice(4.80);
+        c7.setDetailPrice(15.99);
+        c7.setColor("Red");
+        c7.setDimensions("Pendant: 2cm, Chain: 45cm");
+        c7.setBenefits("Enhances courage, motivation and focus.");
+        c7.setZodiacInfo("Aries, Leo");
+        crystals.add(c7);
+
+        Crystal c8 = new Crystal();
+        c8.setId(8L);
+        c8.setName("Selenite");
+        c8.setSubtitle("A stone of amplifying energy and promoting calm.");
+        c8.setDescription("Opal is an amazing stone for balance, harmony, and amplifying your positive powers.");
+        c8.setImage("selenite.jpeg");
+        c8.setMoreImage("selenite-necklace.jpeg");
+        c8.setDetailTitle("Selenite Necklace");
+        c8.setPrice(4.80);
+        c8.setDetailPrice(15.99);
+        c8.setColor("White");
+        c8.setDimensions("Pendant: 2cm, Chain: 45cm");
+        c8.setBenefits("Used for spiritual cleansing.");
+        c8.setZodiacInfo("Taurus, Cancer");
+        crystals.add(c8);
+
+        Crystal c9 = new Crystal();
+        c9.setId(9L);
+        c9.setName("Obsidian");
+        c9.setSubtitle("A stone of clarity and transformation");
+        c9.setDescription("Obsidian shields from negativity, bad intentions and psychic attacks");
+        c9.setImage("obsidian.jpeg");
+        c9.setMoreImage("obsidian-necklace.jpeg");
+        c9.setDetailTitle("Obsidian Necklace");
+        c9.setPrice(4.80);
+        c9.setDetailPrice(15.99);
+        c9.setColor("Black");
+        c9.setDimensions("Pendant: 2cm, Chain: 45cm");
+        c9.setBenefits("Connects you to Earth's energy, providing stability");
+        c9.setZodiacInfo("Scorpio, Capricorn");
+        crystals.add(c9);
+
+
+        Crystal c10 = new Crystal();
+        c10.setId(10L);
+        c10.setName("Citrine");
+        c10.setSubtitle("A stone of joy and abundance");
+        c10.setDescription("Citrine is an amazing stone symbolizing optimism, the sun's energy and manifesting goals");
+        c10.setImage("citrine.jpeg");
+        c10.setMoreImage("citrine-necklace.jpeg");
+        c10.setDetailTitle("Citrine Necklace");
+        c10.setPrice(4.80);
+        c10.setDetailPrice(15.99);
+        c10.setColor("Yellow");
+        c10.setDimensions("Pendant: 2cm, Chain: 45cm");
+        c10.setBenefits("Radiates warmth, positivity, optimism, and vitalizing energy.");
+        c10.setZodiacInfo("Scorpio, Saggitarius");
+        crystals.add(c10);
+
+        Crystal c11 = new Crystal();
+        c11.setId(11L);
+        c11.setName("Red Agate");
+        c11.setSubtitle("A stone of grounding and resilience");
+        c11.setDescription("Used in talismans to amplify personal traits, enhance luck and connect to your sign's attributes.");
+        c11.setImage("red-agate.jpeg");
+        c11.setMoreImage("red-agate-necklace.jpeg");
+        c11.setDetailTitle("Red Agate Necklace");
+        c11.setPrice(4.80);
+        c11.setDetailPrice(15.99);
+        c11.setColor("Red");
+        c11.setDimensions("Pendant: 2cm, Chain: 45cm");
+        c11.setBenefits("Enhances courage, self-confidence and determination.");
+        c11.setZodiacInfo("Capricorn, Taurus");
+        crystals.add(c11);
+
+        Crystal c12 = new Crystal();
+        c12.setId(12L);
+        c12.setName("Apatite");
+        c12.setSubtitle("A stone of growth and clarity");
+        c12.setDescription("Apatite is an amazing stone that helps with appetite control and metabolism.");
+        c12.setImage("apatite.jpeg");
+        c12.setMoreImage("apatite-necklace.jpeg");
+        c12.setDetailTitle("Apatite Necklace");
+        c12.setPrice(4.80);
+        c12.setDetailPrice(15.99);
+        c12.setColor("Blue");
+        c12.setDimensions("Pendant: 2cm, Chain: 45cm");
+        c12.setBenefits("Associated with inspiration and spiritual insight.");
+        c12.setZodiacInfo("Gemini, Libra");
+        crystals.add(c12);
     }
 
     public List<Crystal> findAll() {
